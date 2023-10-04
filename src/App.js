@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { createContext } from 'react';
 import './App.css';
+import CompA from './CompA';
+// use context hook hum tb use krty hy jb humny aik component sy dosry component my data transfer krna hota hy
+
+export const NameContext= createContext();
+// agar hum koi sy 2 context pass krna ho to
+       export const ChanelContext=createContext()
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NameContext.Provider value={"Muhammad zubair"}>
+        <ChanelContext.Provider value={"my z channel"}>
+            <CompA/>
+        </ChanelContext.Provider>
+      </NameContext.Provider>
+    
     </div>
   );
 }
